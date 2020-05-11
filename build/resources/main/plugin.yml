@@ -1,0 +1,8 @@
+name: AntiBow
+version: 1.0
+author: ItmanHunter
+main: com.supermistmc.antibow.AntiBow
+api-version: 1.15
+commands:
+  anitbow:
+    description: AnitBow command
