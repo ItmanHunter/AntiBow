@@ -42,8 +42,9 @@ public class AntiBowCommand extends AbstractCommand {
                     if(playerCheck(sender)) {
                         return true;
                     }
-                    RegionServiceFactory.getRegionService().setFirstPoint(fromPlayer((Player)sender));
-                    sender.sendMessage(antiBowPlugin.getLocale(Locale.POSITION1_SET));
+                    Point firstPoint = fromPlayer((Player)sender);
+                    RegionServiceFactory.getRegionService().setFirstPoint(firstPoint);
+                    sender.sendMessage(antiBowPlugin.getLocale(Locale.POSITION1_SET,firstPoint));
                     return true;
                 } else {
                     sender.sendMessage(antiBowPlugin.getLocale(Locale.NO_PERMISSION));
@@ -55,8 +56,9 @@ public class AntiBowCommand extends AbstractCommand {
                     if(playerCheck(sender)) {
                         return true;
                     }
-                    RegionServiceFactory.getRegionService().setSecondPoint(fromPlayer((Player)sender));
-                    sender.sendMessage(antiBowPlugin.getLocale(Locale.POSITION2_SET));
+                    Point secondPoint = fromPlayer((Player)sender);
+                    RegionServiceFactory.getRegionService().setSecondPoint(secondPoint);
+                    sender.sendMessage(antiBowPlugin.getLocale(Locale.POSITION2_SET,secondPoint));
                 } else {
                     sender.sendMessage(antiBowPlugin.getLocale(Locale.NO_PERMISSION));
                 }

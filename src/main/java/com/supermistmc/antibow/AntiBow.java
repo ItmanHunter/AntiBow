@@ -66,4 +66,11 @@ public class AntiBow extends JavaPlugin {
         return list;
     }
 
+    public String getLocale(String name, Point point) {
+        String message = MessageUtil.replaceColors(locale.getConfig().getString(name,""));
+        message = message.replace("%x%",String.valueOf(point.getX()));
+        message = message.replace("%y%",String.valueOf(point.getY()));
+        message = message.replace("%z%",String.valueOf(point.getZ()));
+        return message;
+    }
 }
