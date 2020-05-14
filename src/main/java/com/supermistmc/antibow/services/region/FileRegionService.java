@@ -28,7 +28,7 @@ public class FileRegionService implements IRegionService {
 
     @Override
     public void reload() {
-        dataConfig = new FileManager("locale",
+        dataConfig = new FileManager("data",
                 plugin.getDataFolder().getAbsolutePath());
     }
 
