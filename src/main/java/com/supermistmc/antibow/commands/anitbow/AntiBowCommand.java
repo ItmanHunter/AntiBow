@@ -15,5 +15,6 @@ public class AntiBowCommand extends BaseCommand {
         addSubCommand(new AntiBowSubSetFirstPosition());
         addSubCommand(new AntiBowSubSetSecondPosition());
         addSubCommand(new AntiBowSubHelp());
+        addSubCommand(new AntiBowSubWrongUsage());
     }
 }

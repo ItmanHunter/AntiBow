@@ -12,4 +12,5 @@ public class Permissions {
 
     public final static String RELOAD_ANTIBOW = "antibow.reload";
 
+    public static final String USAGE = "antibow.usage";
 }

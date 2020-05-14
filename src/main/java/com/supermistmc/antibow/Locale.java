@@ -27,4 +27,6 @@ public class Locale {
     public final static String NO_POSITION1 = "no-position1-set";
 
     public final static String NO_POSITION2 = "no-position2-set";
+
+    public final static String WRONG_USAGE = "wrong-usage";
 }
