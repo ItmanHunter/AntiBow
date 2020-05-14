@@ -1,9 +1,8 @@
-package com.supermistmc.antibow.services;
+package com.supermistmc.antibow.services.region;
 
 import com.supermistmc.antibow.Point;
 import com.supermistmc.antibow.Region;
 import com.supermistmc.antibow.utils.FileManager;
-import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
@@ -15,12 +14,24 @@ public class FileRegionService implements IRegionService {
     private static String secondPoint = "secondPoint";
 
     FileManager dataConfig;
+    JavaPlugin plugin;
 
     public FileRegionService(JavaPlugin plugin) {
-        dataConfig = new FileManager("data",
-                plugin.getDataFolder().getAbsolutePath());
-
+        this.plugin = plugin;
+        reload();
     }
+
+    @Override
+    public void save() {
+        dataConfig.save();
+    }
+
+    @Override
+    public void reload() {
+        dataConfig = new FileManager("locale",
+                plugin.getDataFolder().getAbsolutePath());
+    }
+
     @Override
     public void setFirstPoint(Point point) {
         dataConfig.getConfig().set(firstPoint,savePoint(point));

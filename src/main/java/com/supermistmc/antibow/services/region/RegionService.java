@@ -1,11 +1,11 @@
-package com.supermistmc.antibow.services;
+package com.supermistmc.antibow.services.region;
 
-public class RegionServiceFactory {
+public class RegionService {
 
     private static IRegionService iRegionService;
 
     public static void setRegionService(IRegionService iRegionService) {
-        RegionServiceFactory.iRegionService = iRegionService;
+        RegionService.iRegionService = iRegionService;
     }
 
     public static IRegionService getRegionService() {

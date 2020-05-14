@@ -7,6 +7,8 @@ public class Region {
 
     String world;
 
+    String name;
+
     double maxX, minX, maxY, minY, maxZ, minZ;
 
     public Region(Point first,Point second) {

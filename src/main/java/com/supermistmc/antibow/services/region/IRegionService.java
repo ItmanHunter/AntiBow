@@ -1,4 +1,4 @@
-package com.supermistmc.antibow.services;
+package com.supermistmc.antibow.services.region;
 
 import com.supermistmc.antibow.Point;
 import com.supermistmc.antibow.Region;
@@ -12,4 +12,6 @@ public interface IRegionService {
     void removeRegion(String name);
     Region getRegion(String name);
     List<Region> getRegions();
+    void reload();
+    void save();
 }

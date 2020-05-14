@@ -1,19 +1,20 @@
 package com.supermistmc.antibow.commands;
 
+import com.supermistmc.antibow.commands.anitbow.AntiBowCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public enum Command {
     Currency(AntiBowCommand.COMMAND,new AntiBowCommand());
 
     private String commandString;
-    private AbstractCommand command;
+    private BaseCommand command;
 
-    Command(String cmd, AbstractCommand abstractCommand) {
+    Command(String cmd, BaseCommand abstractCommand) {
         this.commandString = cmd;
         this.command = abstractCommand;
     }
 
-    public AbstractCommand getCommand() {
+    public BaseCommand getCommand() {
         return command;
     }
 
