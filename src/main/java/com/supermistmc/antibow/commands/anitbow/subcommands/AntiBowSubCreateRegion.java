@@ -6,6 +6,7 @@ import com.supermistmc.antibow.Permissions;
 import com.supermistmc.antibow.commands.AbstractSubCommand;
 import com.supermistmc.antibow.services.locale.ILocaleService;
 import com.supermistmc.antibow.services.locale.LocaleService;
+import com.supermistmc.antibow.services.region.IRegionService;
 import com.supermistmc.antibow.services.region.RegionService;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -34,7 +35,16 @@ public class AntiBowSubCreateRegion extends AbstractSubCommand {
     public boolean executeCommand(CommandSender sender, Command command, String label, String[] args) {
         ILocaleService localeService = LocaleService.getILocaleService();
         if (sender.isOp() || sender.hasPermission(Permissions.CREATE_REGION)) {
-            RegionService.getRegionService().addRegion(args[1]);
+            IRegionService regionService = RegionService.getRegionService();
+            if (!regionService.isFirstPointSet()) {
+                sender.sendMessage(localeService.getLocale(Locale.NO_POSITION1));
+                return true;
+            }
+            if (!regionService.isSecondPointSet()) {
+                sender.sendMessage(localeService.getLocale(Locale.NO_POSITION2));
+                return true;
+            }
+            regionService.addRegion(args[1]);
             sender.sendMessage(localeService.getLocale(Locale.REGION_ADDED));
         } else {
             sender.sendMessage(localeService.getLocale(Locale.NO_PERMISSION));

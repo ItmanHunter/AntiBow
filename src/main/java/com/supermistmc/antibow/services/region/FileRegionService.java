@@ -27,6 +27,16 @@ public class FileRegionService implements IRegionService {
     }
 
     @Override
+    public boolean isFirstPointSet() {
+        return dataConfig.getConfig().isSet(firstPoint);
+    }
+
+    @Override
+    public boolean isSecondPointSet() {
+        return dataConfig.getConfig().isSet(secondPoint);
+    }
+
+    @Override
     public void reload() {
         dataConfig = new FileManager("data",
                 plugin.getDataFolder().getAbsolutePath());

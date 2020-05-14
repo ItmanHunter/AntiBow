@@ -14,4 +14,6 @@ public interface IRegionService {
     List<Region> getRegions();
     void reload();
     void save();
+    boolean isFirstPointSet();
+    boolean isSecondPointSet();
 }
