@@ -25,11 +25,9 @@ public class AntiBowSubSetFirstPosition extends AbstractSubCommand {
 
     @Override
     public boolean canExecute(CommandSender sender, Command command, String label, String[] args) {
-        if (args.length == 2) {
-            for (String commandAlias:SUB_COMMAND_ALIAS) {
-                if(args[0].equalsIgnoreCase(commandAlias)) {
-                    return true;
-                }
+        for (String commandAlias:SUB_COMMAND_ALIAS) {
+            if(args[0].equalsIgnoreCase(commandAlias)) {
+                return true;
             }
         }
         return false;

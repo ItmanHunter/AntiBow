@@ -10,10 +10,10 @@ public class AntiBowCommand extends BaseCommand {
     public AntiBowCommand() {
         addSubCommand(new AntiBowSubCreateRegion());
         addSubCommand(new AntiBowSubDeleteRegion());
-        addSubCommand(new AntiBowSubHelp());
         addSubCommand(new AntiBowSubListRegions());
         addSubCommand(new AntiBowSubReloadPlugin());
         addSubCommand(new AntiBowSubSetFirstPosition());
         addSubCommand(new AntiBowSubSetSecondPosition());
+        addSubCommand(new AntiBowSubHelp());
     }
 }

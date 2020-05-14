@@ -58,6 +58,7 @@ public class FileRegionService implements IRegionService {
     }
 
     private void saveRegion(String name) {
+        dataConfig.getConfig().set("regions."+name+".name", name);
         dataConfig.getConfig().set("regions."+name+".point1", dataConfig.getConfig().get(firstPoint));
         dataConfig.getConfig().set("regions."+name+".point2", dataConfig.getConfig().get(secondPoint));
         dataConfig.save();
@@ -77,11 +78,17 @@ public class FileRegionService implements IRegionService {
     public Region getRegion(String name) {
         Point first = Point.fromString(dataConfig.getConfig().getString("regions."+name+".point1"));
         Point second = Point.fromString(dataConfig.getConfig().getString("regions."+name+".point2"));;
-        return (new Region(first,second));
+        Region region = new Region(first,second);
+        region.setName(dataConfig.getConfig().getString("regions."+name+".name"));
+        return region;
     }
 
     @Override
     public List<Region> getRegions() {
+        if (dataConfig.getConfig().getConfigurationSection("regions") == null) {
+            dataConfig.getConfig().createSection("regions");
+            dataConfig.save();
+        }
         List<Region> regions = new ArrayList<>();
         for(String key:dataConfig.getConfig().getConfigurationSection("regions").getKeys(false)) {
             regions.add(getRegion(key));

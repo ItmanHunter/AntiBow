@@ -20,4 +20,8 @@ public class Locale {
 
     public final static String PLAYER_ONLY = "player-only";
 
+    public final static String NO_BOWS = "no-bows-allowed";
+
+    public final static String NUMBER_FORMAT = "number-format";
+
 }

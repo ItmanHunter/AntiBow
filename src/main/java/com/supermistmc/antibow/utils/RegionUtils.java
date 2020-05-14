@@ -26,7 +26,6 @@ public class RegionUtils {
         if (sender instanceof Player) {
             return false;
         }
-        AntiBow antiBowPlugin = AntiBow.getInstance();
         sender.sendMessage(LocaleService.getILocaleService().getLocale(Locale.PLAYER_ONLY));
         return true;
     }

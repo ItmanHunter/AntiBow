@@ -26,11 +26,9 @@ public class AntiBowSubSetSecondPosition extends AbstractSubCommand {
 
     @Override
     public boolean canExecute(CommandSender sender, Command command, String label, String[] args) {
-        if (args.length == 2) {
-            for (String commandAlias:SUB_COMMAND_ALIAS) {
-                if(args[0].equalsIgnoreCase(commandAlias)) {
-                    return true;
-                }
+        for (String commandAlias:SUB_COMMAND_ALIAS) {
+            if(args[0].equalsIgnoreCase(commandAlias)) {
+                return true;
             }
         }
         return false;
@@ -43,9 +41,9 @@ public class AntiBowSubSetSecondPosition extends AbstractSubCommand {
             if(RegionUtils.playerCheck(sender)) {
                 return true;
             }
-            Point firstPoint = RegionUtils.fromPlayer((Player)sender);
-            RegionService.getRegionService().setSecondPoint(firstPoint);
-            sender.sendMessage(localeService.getLocale(Locale.POSITION2_SET,firstPoint));
+            Point secondPoint = RegionUtils.fromPlayer((Player)sender);
+            RegionService.getRegionService().setSecondPoint(secondPoint);
+            sender.sendMessage(localeService.getLocale(Locale.POSITION2_SET,secondPoint));
         } else {
             sender.sendMessage(localeService.getLocale(Locale.NO_PERMISSION));
         }

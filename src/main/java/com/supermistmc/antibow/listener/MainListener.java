@@ -1,5 +1,7 @@
 package com.supermistmc.antibow.listener;
 
+import com.supermistmc.antibow.Locale;
+import com.supermistmc.antibow.services.locale.LocaleService;
 import com.supermistmc.antibow.utils.RegionUtils;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -15,6 +17,9 @@ public class MainListener implements Listener {
             Player player = (Player) event.getEntity();
             if (RegionUtils.checkPlayerInRegion(player)) {
                 event.setCancelled(true);
+                player.sendMessage(
+                        LocaleService.getILocaleService().getLocale(Locale.NO_BOWS)
+                );
                 return;
             }
         }

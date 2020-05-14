@@ -5,6 +5,9 @@ position1-set: "&bPosition1 set %x% %y% %z%"
 position2-set: "&bPosition2 set %x% %y% %z%"
 no-permission: "&cNo Permission"
 region-added: "&bRegion Created"
+no-bows-allowed: "&cSorry, you can't use a bow here"
+# Decimal Format for co-ordinates
+number-format: "#0.00"
 region-removed: "&bRegion Removed"
 show-region: "&b %region_name% %region_world% (%x1%,%y1%,%z1%) -> (%x2%,%y2%,%z2%)"
 usage-help:
