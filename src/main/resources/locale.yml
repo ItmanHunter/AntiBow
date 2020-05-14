@@ -10,5 +10,5 @@ usage-help:
   2: "&a/antibow pos2 &0- &b To select position point 2"
   3: "&a/antibow create [name] &0- &b To create region of anitbow"
   4: "&a/antibow remove [name] &0- &b To create region of anitbow"
-  4: "&a/antibow reload &0- &b To reload the plugin"
+  5: "&a/antibow reload &0- &b To reload the plugin"
   6: "&a/antibow Help &0- &b to see this"
