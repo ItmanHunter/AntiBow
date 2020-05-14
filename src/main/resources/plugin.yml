@@ -4,5 +4,5 @@ author: ItmanHunter
 main: com.supermistmc.antibow.AntiBow
 api-version: 1.15
 commands:
-  anitbow:
+  antibow:
     description: AnitBow command

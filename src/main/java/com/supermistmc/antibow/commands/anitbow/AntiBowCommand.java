@@ -5,7 +5,7 @@ import com.supermistmc.antibow.commands.anitbow.subcommands.*;
 
 public class AntiBowCommand extends BaseCommand {
 
-    public final static String COMMAND = "antiBow";
+    public final static String COMMAND = "antibow";
 
     public AntiBowCommand() {
         addSubCommand(new AntiBowSubCreateRegion());
